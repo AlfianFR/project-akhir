@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
-    Share
+    Profil
   </title>
   <!-- Favicon -->
   <link href="{{asset('/assets/img/brand/favicon.png')}}" rel="icon" type="image/png')}}">
@@ -73,12 +73,8 @@
                         <h2>Account</h2>
                         <br>
                         <div class="row pb-5">
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                              </div>
-                            {{-- <div class="col-sm-12 col-md-6 col-lg-3">
-                                <h5>Username</h5>
+                            <div class="col-sm-12 col-md-6 col-lg-3">
+                                {{-- <h5>Username</h5> --}}
                                 <br>
                                 <h5>Email</h5>
                                 <br>
@@ -89,8 +85,8 @@
                                 <h5>Role</h5>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-5">
-                                <input type="text" value="{{ auth()->user()->username }}" disabled class="form-control">
-                                <br>
+                                {{-- <input type="text" value="{{ auth()->user()->username }}" disabled class="form-control">
+                                <br> --}}
                                 <input type="text" value="{{ auth()->user()->email }}" disabled class="form-control">
                                 <br>
                                 <input type="password" value="{{ auth()->user()->password }}" disabled class="form-control">
@@ -98,7 +94,7 @@
                                 <input type="text" value="{{ auth()->user()->name }}" disabled class="form-control">
                                 <br>
                                 <input type="text" value="{{ auth()->user()->role }}" disabled class="form-control">
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>

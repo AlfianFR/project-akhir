@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Http\Controllers\Controller;
 use App\Models\Resep;
 use App\Models\Kota;
 use App\Models\Kategori;

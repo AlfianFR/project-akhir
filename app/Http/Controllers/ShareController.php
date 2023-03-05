@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Models\Resep;
 use App\Models\Kota;
 use App\Models\Kategori;
-use App\Models\Resep;
+use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use RealRashid\SweetAlert\Facades\Alert;
 
-class ShareController extends Controller
+class ResepController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,8 @@ class ShareController extends Controller
      */
     public function index()
     {
-
-        $kotas = Kota::all();
-        $kategoris = Kategori::all();
-        return view('share',compact('kategoris','kotas'));
+        $reseps = Resep::with('user','kota','kategori')->where('status', 'Proses')->get();
+        return view('admin.resep.index', compact('reseps'));
     }
 
     /**
@@ -31,7 +29,10 @@ class ShareController extends Controller
      */
     public function create()
     {
-        //
+        $kotas = Kota::all();
+        $kategoris = Kategori::all();
+        $users = User::all();
+        return view('admin.resep.create', compact('kotas','kategoris','users'));
     }
 
     /**
@@ -42,7 +43,9 @@ class ShareController extends Controller
      */
     public function store(Request $request)
     {
+        //validasi
         $validated = $request->validate([
+            'user_id' => 'required',
             'kota_id' => 'required',
             'kategori_id' => 'required',
             'judul' => 'required',
@@ -53,7 +56,7 @@ class ShareController extends Controller
         ]);
 
         $reseps = new Resep();
-        $reseps->user_id = auth()->user()->id;
+        $reseps->user_id = $request->user_id;
         $reseps->kota_id = $request->kota_id;
         $reseps->kategori_id = $request->kategori_id;
         $reseps->judul = $request->judul;
@@ -69,20 +72,14 @@ class ShareController extends Controller
         $reseps->bahan_bahan = $request->bahan_bahan;
         $reseps->langkah_langkah = $request->langkah_langkah;
         $reseps->save();
-        Alert::success('Selesai', 'Terimakasih tolong tunggu konfirmasi dari Admin.
-
-
-
-
-
-        ')->autoClose(2000);
-        return redirect()->route('share.index');
+        return redirect()
+            ->route('resep.index')->with('toast_success', 'Data has been edited');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Resep  $resep
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,34 +90,50 @@ class ShareController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Resep  $resep
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $reseps = Resep::findOrFail($id);
+        $users = User::all();
+        $kotas = Kota::all();
+        $kategoris = Kategori::all();
+        return view('admin.resep.edit', compact('reseps','users','kotas','kategoris'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Resep  $resep
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        //validasi
+        $validated = $request->validate([
+            'status' => 'required',
+        ]);
+
+        $reseps = Resep::findOrFail($id);
+        $reseps->status = $request->status;
+        $reseps->save();
+        return redirect()
+            ->route('resep.index')->with('toast_success', 'Data has been edited');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Resep  $resep
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $reseps = Resep::findOrFail($id);
+        $reseps->delete();
+        return redirect()
+            ->route('resep.index')->with('toast_success', 'Data has been deleted');
     }
 }

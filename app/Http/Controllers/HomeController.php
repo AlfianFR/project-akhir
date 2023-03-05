@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $resep=resep::all();
+        return view('home',compact('resep'));
     }
+
+    
 }

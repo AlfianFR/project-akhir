@@ -15,17 +15,17 @@ class Resep extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-        
+
     }
     public function kota()
     {
         return $this->belongsTo(Kota::class);
-        
+
     }
     public function kategori()
     {
         return $this->belongsTo(Kategori::class);
-        
+
     }
     public function image()
     {

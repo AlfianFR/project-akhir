@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Foody</title>
+    <title>ResepCook</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -58,7 +58,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index" class="navbar-brand ms-4 ms-lg-0">
-                <h1 class="fw-bold text-primary m-0">r<span class="text-secondary">ese</span>p c<span class="text-secondary">oo</span>k</h1>
+                <h1 class="fw-bold text-primary m-0">R<span class="text-secondary">ese</span>pC<span class="text-secondary">oo</span>k</h1>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -94,12 +94,12 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/wallpaperflare-cropped.jpg" alt="Image">
+                    <img class="w-100" src="img/goat-satay.jpg" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">Bagus untuk kesehatan</h1>
+                                    <h1 class="display-2 mb-5 animated slideInDown">makanan indonesia</h1>
 
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/rice.jpg" alt="Image">
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row justify-content-start">
@@ -164,17 +164,18 @@
                 <h1 class="display-5 mb-3">Masakan indonesia</h1>
                 <p>Masakan Indonesia memiliki rasa yang kaya; paling sering digambarkan sebagai gurih, dan pedas, serta kombinasi dari rasa dasar seperti manis, asin, asam dan pahit</p>
             </div>
+            @if (@resepww                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  )
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/nasi_ayam.jpg" alt="">
-                        <h4 class="mb-3">Nasi Ayam Bakar</h4>
+                        <h4 class="mb-3">Nasi Ayam Bakar</h4>jkgkh56e473we3wqkjggrfysgrtfe
                         <p class="mb-4">Nasi bakar merujuk pada nasi yang diberi beberapa bumbu dan lauk, kemudian dibungkus dengan daun pisang dan dikunci dengan lidi, yang lalu dibakar di atas api arang. Daun pisang yang dibakar pun menghasilkan aroma unik pada nasi. </p>
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
                             More</a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/icon-2.png" alt="">
                         <h4 class="mb-3">Organic Products</h4>
@@ -183,8 +184,8 @@
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
                             More</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                </div> --}}
+                {{-- <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="bg-white text-center h-100 p-4 p-xl-5">
                         <img class="img-fluid mb-4" src="img/icon-3.png" alt="">
                         <h4 class="mb-3">Biologically Safe</h4>
@@ -193,8 +194,9 @@
                         <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read
                             More</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
+            @endif
         </div>
     </div>
     <!-- Feature End -->
